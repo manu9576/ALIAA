@@ -1,0 +1,26 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+<Files wp-config.php>
+order allow,deny
+deny from all
+</Files>
+
+# Alternative pour empêcher le listage des répertoires
+#IndexIgnore *
+
+# Activation du suivi des liens symboliques
+#Options +FollowSymLinks
+
+# Masquer les informations du serveur
+ServerSignature Off
+
+# END WordPress
